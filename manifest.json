@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+
+  "name": "yout",
+  "description": "This extension link to yout.com from youtube for downloading musics",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "run_at" :"document_end",
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["style.css"],
+      "js": ["youtube.js"]
+    },
+    {
+      "run_at" :"document_end",
+      "matches": ["https://yout.com/*"],
+      "js": ["yout.js"]
+    }
+  ]
+}
