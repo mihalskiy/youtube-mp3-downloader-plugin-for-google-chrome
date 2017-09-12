@@ -1,21 +1,28 @@
 {
-  "manifest_version": 2,
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "manifest_version": 2,
+    "name": "Youtube to mp3 || kais ",
+    "version": "1.1",
+    "description": "Youtube video to mp3",
+    "permissions": [
+        "tabs",
+        "*://*.youtube.com/*",
+        "http://sarojsubedi.info.np/*"
+    ],
+    "content_scripts": [
 
-  "name": "yout",
-  "description": "This extension link to yout.com from youtube for downloading musics",
-  "version": "1.0",
-
-  "content_scripts": [
-    {
-      "run_at" :"document_end",
-      "matches": ["https://www.youtube.com/*"],
-      "css": ["style.css"],
-      "js": ["youtube.js"]
+        {
+            "matches": [
+                "*://www.youtube.com/*"
+            ],
+            "js": ["youtube.js"],
+             "css": [ "style.css" ]
+        }
+    ],
+    "browser_action": {
+       
     },
-    {
-      "run_at" :"document_end",
-      "matches": ["https://yout.com/*"],
-      "js": ["index.html"]
-    }
-  ]
+    "web_accessible_resources": [
+        "youtube.css"
+    ]
 }
