@@ -1,31 +1,18 @@
 {
-	"background": {
-		"page": "index.html",
-		"persistent": true
-	},
-	"content_scripts": [{
-		
-        "js": ["youtube.js", "yout.js"],
-        "css": "style.css",
-        "html": "index.html",
-		"matches": ["http://www.youtube.com/*", "https://www.youtube.com/*"],
-		"run_at": "document_start"
-		}],
-	"description": "Download YouTube videos with different video quality: 1080P, 720P, 480P, 360p etc. Supports all formats Mp3, MP4, FLV, WebM, 3GP",
-	"icons": {
-	},
-	"manifest_version": 2,
-	"author": "Addoncrop",
-	"name": "YouTube Video and Mp3 Downloader",
-	"options_page": "index.html",
-	"homepage_url": "http://addoncrop.com/youtube_video_downloader/",
-	"permissions": ["tabs", "storage", "unlimitedStorage", "downloads", "declarativeContent", "activeTab", "webRequest", "webRequestBlocking", "management", "bookmarks", "<all_urls>"],
-	"browser_action": {
-		"default_popup": "index.html",
-		"default_title": "YouTube Downloader"
-	},
-	"short_name": "Youtube Downloader",
-	"version": "14.1.2",
-	"web_accessible_resources": ["data/icons/*", "data/options/*", "data/content_script/*", "Dark/images/*", "Dark/css/*", "Dark/scripts/youtubeToPopUpPlayerHandler.js"],
-	"content_security_policy": "script-src 'self' https://ssl.google-analytics.com/ https://apis.google.com; object-src 'self'"
+  "manifest_version": 2,
+
+  "name": "yout",
+  "description": "This extension link to yout.com from youtube for downloading musics",
+  "version": "1.0",
+
+  "content_scripts": [
+    {
+      "run_at" :"document_end",
+      "matches": ["https://www.youtube.com/*"],
+      "css": ["style.css"],
+	  "js": ["youtube.js"],
+	  "html": ["index.html"]
+    }
+
+  ]
 }

@@ -1,17 +1,29 @@
- <!doctype html>
-<html>
-<head>
-    <title>GTmetrix Analyzer</title>
-    <script src="popup.js"></script>
-    <link href="style.css" rel="stylesheet">
-    <script src="youtube.js"></script>
-</head>
-<body>
-<h1>GTmetrix Analyzer</h1>
-<button id="watch8-secondary-actions">Check this page now!</button>
-<div id="ytb-download">
-<button onclick="dropdown()" id="button" class="YouTubeSideplayerButtonSmall">download mp3</button>
-<button id="Menuitems"><a href="google.com" target="_blank">item 1</a> </button>
+<h1>Pause / Play Buttons for YouTube Videos</h1>
+
+<!-- Make sure ?enablejsapi=1 is on URL -->
+<iframe id="video" src="//www.youtube.com/embed/FKWwdQu6_ok?enablejsapi=1&html5=1" frameborder="0" allowfullscreen></iframe>
+
+<!-- 
+SVG ==
+http://thenounproject.com/term/play/23255/ 
+https://css-tricks.com/svg-tabs-using-svg-shape-template/
+-->
+<svg class="defs">
+  <defs>
+    <path id="pause-button-shape"  d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M21,33.064c0,2.201-1.688,4-3.75,4
+    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z M34.5,33.064c0,2.201-1.688,4-3.75,4
+    s-3.75-1.799-3.75-4V14.934c0-2.199,1.688-4,3.75-4s3.75,1.801,3.75,4V33.064z"/>
+    <path id="play-button-shape"  d="M24,0C10.745,0,0,10.745,0,24s10.745,24,24,24s24-10.745,24-24S37.255,0,24,0z M31.672,26.828l-9.344,9.344
+    C20.771,37.729,19.5,37.2,19.5,35V13c0-2.2,1.271-2.729,2.828-1.172l9.344,9.344C33.229,22.729,33.229,25.271,31.672,26.828z"/>
+  </defs>
+</svg>
+
+<div class="buttons">
+  <!-- if we needed to change height/width we could use viewBox here -->
+  <svg class="button" id="play-button">
+    <use xlink:href="#play-button-shape">
+  </svg>
+  <svg class="button" id="pause-button">
+    <use xlink:href="#pause-button-shape">
+  </svg>
 </div>
-</body>
-</html> 

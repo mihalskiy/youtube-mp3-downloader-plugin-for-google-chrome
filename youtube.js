@@ -1,25 +1,33 @@
-function addExtendButton(){
+var player;
 
-    if (document.getElementById("watch8-secondary-actions") !== null && document.getElementById("watch8-secondary-actions").querySelector("#extendButton") === null){
-
-        var extendButton = document.createElement("button");
-        extendButton.setAttribute("id", "extendButton");
-        extendButton.classList.add("yt-uix-button", "yt-uix-button-size-default", "yt-uix-button-opacity", "yt-uix-tooltip");
-        var content = document.createElement("span");
-        content.classList.add("yt-uix-button-content");
-        content.innerHTML = "Extend";
-        extendButton.appendChild(content);
-        document.getElementById("watch8-secondary-actions").insertBefore(extendButton, document.getElementById("watch8-secondary-actions").children[2]);var url = window.location.href;
-        var videoid = url.match(/(?:https?:\/{2})?(?:w{3}\.)?youtu(?:be)?\.(?:com|be)(?:\/watch\?v=|\/)([^\s&]+)/);
-        if(videoid !== null) {
-            console.log("video id = ",videoid[1]);
-            extendButton.addEventListener('click', function() {
-                document.location.href = "https://www.youtube.com/embed/" + videoid[1];
-            }, false);
-
-        }
-	}
-
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+  // create the global player from the specific iframe (#video)
+  player = new YT.Player('video', {
+    events: {
+      // call this function when player is ready to use
+      'onReady': onPlayerReady
+    }
+  });
 }
 
-setInterval(addExtendButton, 50);
+function onPlayerReady(event) {
+  
+  // bind events
+  var playButton = document.getElementById("play-button");
+  playButton.addEventListener("click", function() {
+    player.playVideo();
+  });
+  
+  var pauseButton = document.getElementById("pause-button");
+  pauseButton.addEventListener("click", function() {
+    player.pauseVideo();
+  });
+  
+}
+
+// Inject YouTube API script
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/player_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
