@@ -15,7 +15,7 @@
     {
       "run_at" :"document_end",
       "matches": ["https://yout.com/*"],
-      "js": ["yout.js"]
+      "js": ["index.html"]
     }
   ]
 }
