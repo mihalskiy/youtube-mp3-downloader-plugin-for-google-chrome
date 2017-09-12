@@ -2,7 +2,6 @@ var addButton = function() {
   var container = document.getElementById("watch8-secondary-actions");
   var link = document.createElement("a");
   var span = document.createElement("span");
-  debugger
   var youtube_id = window.location.href.match(/v=([^&]*)/)[1];
 
   link.setAttribute("target", "_blank");
@@ -12,7 +11,10 @@ var addButton = function() {
   span.className += "yt-uix-button-content";
   debugger
   link.appendChild(span);
+    debugger;
+console.log(link)
   container.appendChild(link);
+
 };
 
 document.addEventListener("spfdone", function() {
