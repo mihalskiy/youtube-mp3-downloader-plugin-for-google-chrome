@@ -8,7 +8,7 @@
 
 .firstButton {
     background-color: var(--yt-brand-paper-button-color);
-    font-weight: 595;
+    font-weight: 500;
     --yt-button-text-color: hsl(0, 0%, 100%);
     color: var(--yt-subscribe-button-text-color);
     padding: 10px 16px;
@@ -26,9 +26,10 @@
     --yt-brand-paper-button-color: hsl(0, 100%, 50%);
     --yt-brand-color: hsl(0, 100%, 50%);
     text-align: center;
+    cursor: pointer;
 }
 
-    #Menuitems {
+#Menuitems {
     display: none;
     margin-right: 5px;
     background-color: var(--yt-brand-paper-button-color);
@@ -49,9 +50,9 @@
     --yt-brand-paper-button-color: hsl(0, 100%, 50%);
     --yt-brand-color: hsl(0, 100%, 50%);
     text-align: center;
-    }
+}
 
- #Menuitems a {
-        text-decoration: none;
-        color: hsl(0, 0%, 100%);
-    }
+#Menuitems a {
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}

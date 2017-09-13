@@ -1,25 +1,15 @@
 
-
 const loaded = function () {
-
-
   const content = `
-
-  <div id="ytb-download">
-    <button class="firstButton" onclick="dropdown()"> <img src="icon.png">Download mp3</button>
-    <button id="Menuitems"><a href="https://www.google.com" target="_blank">item 1</a> </button>
-    </div>
-      <script>
-   
-
-          </script>
-    `;
+    <div id="ytb-download">
+      <button class="firstButton" onclick="(function () {let a = document.getElementById('Menuitems');if ( a) {a.style.display='block'; }})()"> 
+          <img src="icon.png">Download mp3
+      </button>
+      <button id="Menuitems"><a href="https://www.google.com" target="_blank">item 1</a> </button>
+    </div>`;
 
 
-               function dropdown()
-        {
-            document.getElementById("Menuitems").style.display="block";
-        }
+
 
   const youtubeSelector = 'top-row';
 
@@ -38,8 +28,7 @@ const loaded = function () {
       while (div.firstChild) {
         element.appendChild(div.firstChild);
       }
-    }, 5000);
-
+    }, 4200);
   }
 
   if (window.location.href.includes('youtube.com')) {

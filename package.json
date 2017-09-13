@@ -1,0 +1,26 @@
+{
+  "name": "youtube-mp3-downloader-plugin-for-google-chrome",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mihalskiy/youtube-mp3-downloader-plugin-for-google-chrome.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mihalskiy/youtube-mp3-downloader-plugin-for-google-chrome/issues"
+  },
+  "homepage": "https://github.com/mihalskiy/youtube-mp3-downloader-plugin-for-google-chrome#readme",
+  "dependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.7.0"
+  }
+}
