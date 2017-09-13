@@ -1,5 +1,8 @@
 
-
+    var   function dropdown()
+        {
+            document.getElementById("Menuitems").style.display="block";
+        }
 const loaded = function () {
 
 
@@ -16,10 +19,7 @@ const loaded = function () {
     `;
 
 
-               function dropdown()
-        {
-            document.getElementById("Menuitems").style.display="block";
-        }
+
 
   const youtubeSelector = 'top-row';
 
