@@ -1,14 +1,14 @@
 
 const loaded = function () {
   const content = `
+    <button id="Menuitems"><a href="http://www.hdmp3youtube.com/?addon=BROWSER&url=URL" target="_blank">Download This mp3</a> </button>
     <div id="ytb-download">
       <button class="firstButton" onclick="(function () {let a = document.getElementById('Menuitems');if ( a) {a.style.display='block'; }})()"> 
           <img src="icon.png">Download mp3
       </button>
-      <button id="Menuitems"><a href="https://www.google.com" target="_blank">item 1</a> </button>
     </div>`;
 
-  const youtubeSelector = 'top-row';
+  const youtubeSelector = 'info';
 
   function appendMessage() {
     let element = document.getElementById(youtubeSelector);

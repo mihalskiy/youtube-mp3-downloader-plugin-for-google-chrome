@@ -30,10 +30,11 @@
 }
 
 #Menuitems {
+    width: 100%;
     display: none;
     margin-right: 5px;
     background-color: var(--yt-brand-paper-button-color);
-    font-weight: 595;
+    font-weight: 500;
     --yt-button-text-color: hsl(0, 0%, 100%);
     color: var(--yt-subscribe-button-text-color);
     padding: 10px 16px;
