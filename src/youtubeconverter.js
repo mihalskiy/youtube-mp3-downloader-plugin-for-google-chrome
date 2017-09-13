@@ -8,9 +8,6 @@ const loaded = function () {
       <button id="Menuitems"><a href="https://www.google.com" target="_blank">item 1</a> </button>
     </div>`;
 
-
-
-
   const youtubeSelector = 'top-row';
 
   function appendMessage() {
@@ -18,11 +15,7 @@ const loaded = function () {
 
     setTimeout(() => {
       element = document.getElementById(youtubeSelector);
-
-      console.log("4 4-------- - - - - document load");
-      console.log(element)
-
-      var div = document.createElement('div');
+      const div = document.createElement('div');
       div.innerHTML = content;
 
       while (div.firstChild) {
