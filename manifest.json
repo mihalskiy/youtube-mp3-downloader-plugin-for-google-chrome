@@ -1,18 +1,31 @@
 {
   "manifest_version": 2,
-
-  "name": "yout",
-  "description": "This extension link to yout.com from youtube for downloading musics",
-  "version": "1.0",
-
+  "name": "111111YouTubeConverter.Me",
   "content_scripts": [
     {
-      "run_at" :"document_end",
-      "matches": ["https://www.youtube.com/*"],
-      "css": ["style.css"],
-	  "js": ["youtube.js"],
-	  "html": ["index.html"]
+      "js": [
+        "youtubeconverter.js"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "matches": [
+        "http://*.youtube.com/*",
+        "https://*.youtube.com/*"
+      ],
+      "run_at": "document_end"
     }
-
-  ]
+  ],
+  "description": "Add links to convert and download Youtube videos as MP3.",
+  "icons": {
+    "32": "32.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+  "permissions": [
+    "tabs",
+    "http://*.youtube.com/*",
+    "https://*.youtube.com/*"
+  ],
+  "version": "1.0.4"
 }
