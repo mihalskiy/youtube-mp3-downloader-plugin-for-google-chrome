@@ -31,7 +31,6 @@
     #Menuitems {
     display: none;
     margin-right: 5px;
-    background-color: var(--yt-brand-paper-button-color);
     font-weight: 595;
     --yt-button-text-color: hsl(0, 0%, 100%);
     color: var(--yt-subscribe-button-text-color);
