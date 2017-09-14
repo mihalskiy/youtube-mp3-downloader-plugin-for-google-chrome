@@ -1,15 +1,15 @@
 
-    var   function dropdown()
-        {
-            document.getElementById("Menuitems").style.display="block";
-        }
+    var   
 const loaded = function () {
 
 
   const content = `
 
   <div id="ytb-download">
-    <button class="firstButton" onclick="dropdown()"> <img src="icon.png">Download mp3</button>
+    <button class="firstButton" onclick="function dropdown()
+        {
+            document.getElementById("Menuitems").style.display="block";
+        }"> <img src="icon.png">Download mp3</button>
     <button id="Menuitems"><a href="https://www.google.com" target="_blank">item 1</a> </button>
     </div>
       <script>
