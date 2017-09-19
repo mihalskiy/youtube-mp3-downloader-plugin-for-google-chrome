@@ -1,31 +1,38 @@
 {
-  "manifest_version": 2,
-  "name": "111111YouTubeConverter.Me",
-  "content_scripts": [
+  "name" : "111111YouTubeConverter Mp3 click(!)",
+  "version" : "2.0",
+  "manifest_version" : 2,
+  "description" : "111111YouTubeConverter Mp3 click(!)",
+  "icons" : {
+    "128" : "icons/icon-128.png"
+  },
+  "author" : "Tony Stark",
+  "content_scripts" : [
     {
-      "js": [
-        "youtubeconverter.js"
-      ],
-      "css": [
-        "style.css"
-      ],
       "matches": [
         "http://*.youtube.com/*",
         "https://*.youtube.com/*"
       ],
+      "js": [
+        "easy-mp3.js"
+      ],
+      "css": [
+        "easy-mp3.css"
+      ],
       "run_at": "document_end"
     }
   ],
-  "description": "Add links to convert and download Youtube videos as MP3.",
-  "icons": {
-    "32": "32.png",
-    "48": "48.png",
-    "128": "128.png"
-  },
-  "permissions": [
+  "permissions" : [
+    "http://*/*",
+    "https://*/*",
     "tabs",
     "http://*.youtube.com/*",
     "https://*.youtube.com/*"
   ],
-  "version": "1.0.4"
+  "applications": {
+    "gecko": {
+      "id": "d.dlehdr@cello.aat",
+      "strict_min_version": "42.0"
+    }
+  }
 }
