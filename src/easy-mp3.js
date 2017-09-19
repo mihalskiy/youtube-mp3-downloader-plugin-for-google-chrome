@@ -1,50 +1,40 @@
+mytmp3_btn_onclick = function (){
+  var path ='http://www.easy-youtube-mp3.com/convert.php?v='+encodeURIComponent(window.location);
+  window.open(path,'_blank');
+};
 
-const loaded = function () {
-  const content = `
-    <button id="Menuitems"><a href="http://www.hdmp3youtube.com/?addon=CHROME_BROWSER&url=URL" target="_blank">Download This mp3</a> </button>
-    <div id="ytb-download">
-      <button class="firstButton" onclick="(function () {let a = document.getElementById('Menuitems');if ( a) {a.style.display='block'; }})()"> 
-          <img src="icon.png">Download mp3
-      </button>
-    </div>`;
+getSpan = function(text, className) {
+  var _tn = document.createTextNode(text);
+  var span = document.createElement("span");
+  span.className  = className;
+  span.appendChild(_tn);
+  return span;
+};
 
-  const youtubeSelector = 'info';
+createButton = function() {
+  var obj = document.querySelector('#main>#info');
+  if(obj != null){
+    // check if the button has already been created
+    var btnRow = document.getElementById('easyMp3');
+    if(btnRow == null) {
+      var easyMp3 = document.createElement("div");
+      easyMp3.id  = "easyMp3";
+      easyMp3.className  = "style-scope ytd-watch";
 
-  function appendMessage() {
-    let element = document.getElementById(youtubeSelector);
+      var mytmp3_btn = document.createElement("div");
+      mytmp3_btn.className  = "style-scope mytmp3_btn";
 
-    setTimeout(() => {
-      element = document.getElementById(youtubeSelector);
-      const div = document.createElement('div');
-      div.innerHTML = content;
+      mytmp3_btn.appendChild(getSpan("DOWNLOAD MP3 NOW", ""))
 
-      while (div.firstChild) {
-        element.appendChild(div.firstChild);
-      }
-    }, 4200);
-  }
+      mytmp3_btn.onclick = mytmp3_btn_onclick;
 
-  if (window.location.href.includes('youtube.com')) {
-    console.log("333333(window.location.href.includes('youtube.com')");
-    appendMessage();
+      obj.parentNode.insertBefore(easyMp3, obj);
+      easyMp3.appendChild(mytmp3_btn);
+    }
   }
 };
 
-window.addEventListener("load", function () {
-  console.log("6666END - window load");
-  loaded();
-});
-
-
-// document.addEventListener("load", function () {
-//   console.log("11 - document load");
-//   loaded()
-// });
-// document.addEventListener("DOMContentLoaded", function () {
-//   console.log("22 - DOMContentLoaded");
-//   loaded()
-// });
-// document.addEventListener("load", function () {
-//   console.log("33 - document load");
-//   loaded()
-// });
+// yt does make use of some bogus AJAX functionality which breaks pagemod
+// we have to check in intervals if the document has been replaced by yt to
+// recreate the button if needed.
+var intervalCheck = setInterval(function(){ createButton() }, 250);
