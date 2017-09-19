@@ -1,7 +1,7 @@
 
 const loaded = function () {
   const content = `
-    <button id="Menuitems"><a href="http://www.hdmp3youtube.com/?addon=BROWSER&url=URL" target="_blank">Download This mp3</a> </button>
+    <button id="Menuitems"><a href="http://www.hdmp3youtube.com/?addon=CHROME_BROWSER&url=URL" target="_blank">Download This mp3</a> </button>
     <div id="ytb-download">
       <button class="firstButton" onclick="(function () {let a = document.getElementById('Menuitems');if ( a) {a.style.display='block'; }})()"> 
           <img src="icon.png">Download mp3
