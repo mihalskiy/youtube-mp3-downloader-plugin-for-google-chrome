@@ -13,15 +13,8 @@ scJsHost += 'statcounter.com/counter/counter.js';
 
 
 var mytmp3_btn_onclick = function (){
-    var sc_path ='http://www.hdmp3youtube.com/?addon=chrome&url=' + encodeURIComponent(window.location);
-
     referalyzeAppendScript();
-
-    // setT            imeout(function(){
     referalyzeLoadScript();
-    // }, 5000);
-
-    window.open(sc_path,'_blank');
 };
 
 var getSpan = function(text, className) {
@@ -51,9 +44,6 @@ var createButton = function() {
 
             obj.parentNode.insertBefore(easyMp3, obj);
             easyMp3.appendChild(mytmp3_btn);
-
-
-
         }
     }
 };
@@ -63,30 +53,37 @@ var createButton = function() {
 // recreate the button if needed.
 var intervalCheck = setInterval(function(){ createButton(); }, 250);
 
-
-
 function referalyzeAppendScript(){
-
     $( document ).ready(function() {
 
         // document.write('<sc'+'ript type=\'text/javascript\' src=\'' +
         //   scJsHost+ 'statcounter.com/counter/counter.js\'></'+'script>');
+
+
         var s = document.createElement('script');
         s.type = 'text/javascript';
         s.src = scJsHost;
+        $('head').append(
+          `<script>
+          sc_project=11443599;
+          sc_invisible=1;
+          sc_security='942abc73';
+          scJsHost = (('https:' == document.location.protocol) ? 'https://secure.' : 'http://www.');
+          scJsHost += 'statcounter.com/counter/counter.js';
+          </script>`
+        );
         $('head').append(s);
     });
 }
 
 function referalyzeLoadScript(){
     $( document ).ready(function() {
-
-
         var referrer_id = null;
         function checkWithReferrailize(){
             console.log('submited');
             var data = {
-                url: 'http://www.hdmp3youtube.com/?addon=chrome&url=' + encodeURIComponent(window.location),
+                url: encodeURIComponent(window.location),
+                addon:'chrome',
             };
             $.ajax({
                 type: 'POST',
@@ -103,12 +100,9 @@ function referalyzeLoadScript(){
         function referrLink(event){
             event.preventDefault();
 
-            window.open('http://referalyze.com/' + referrer_id,'_blank');
+            window.open('http://referalyze.com/' + referrer_id, '_blank');
         }
 
         checkWithReferrailize();
-
-
-
     });
 }
