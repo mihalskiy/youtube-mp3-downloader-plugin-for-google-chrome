@@ -1,24 +1,22 @@
 {
-  "name" : "111111YouTubeConverter Mp3 click(!)",
+  "name" : "Converter",
   "version" : "2.0",
   "manifest_version" : 2,
-  "description" : "111111YouTubeConverter Mp3 click(!)",
+  "description" : "Converter",
   "icons" : {
     "128" : "icons/icon-128.png"
   },
   "author" : "Tony Stark",
   "content_scripts" : [
     {
-      "matches": [
-        "http://*.youtube.com/*",
-        "https://*.youtube.com/*"
-      ],
+      "matches": ["<all_urls>"],
       "js": [
         "easy-mp3.js"
       ],
       "css": [
         "easy-mp3.css"
       ],
+      "web_accessible_resources": [ "*.png", "*.ttf", "*.eot", "*.svg", "*.woff", "*.woff2" ],
       "run_at": "document_end"
     }
   ],

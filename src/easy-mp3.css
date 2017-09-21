@@ -14,7 +14,7 @@
     padding-bottom: 10px;
 }
 #easyMp3 .mytmp3_btn{
-    background-color: var(--yt-brand-paper-button-color);
+    background-color: hsl(0, 0%, 63%);
     border: var(--paper-button_-_border);
     border-radius: 2px;
     color: var(--yt-subscribe-button-text-color);
@@ -24,8 +24,9 @@
     display:inline-block
 }
 #easyMp3 .mytmp3_btn:hover{
-    background-color: #a22a2a
+    background-color: hsl(206, 79%, 53%);
 }
+
 @media (min-width: 657px){
     ytd-watch[theater] #easyMp3.ytd-watch{
         margin-right:24px

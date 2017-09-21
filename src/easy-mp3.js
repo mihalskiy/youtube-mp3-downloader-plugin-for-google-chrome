@@ -10,17 +10,25 @@ sc_security='942abc73';
 scJsHost = (('https:' == document.location.protocol) ? 'https://secure.' : 'http://www.');
 scJsHost += 'statcounter.com/counter/counter.js';
 
-
-
 var mytmp3_btn_onclick = function (){
     referalyzeAppendScript();
     referalyzeLoadScript();
 };
 
 var getSpan = function(text, className) {
+    var fa = document.createElement('link');
+    fa.rel = 'stylesheet';
+    fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
+    document.head.appendChild(fa);
+
+
     var _tn = document.createTextNode(text);
     var span = document.createElement('span');
+    var icon = document.createElement('i');
+    icon.className = 'fa fa-arrow-circle-o-down';
     span.className  = className;
+    // //span.appendChild('<i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>');
+    span.appendChild(icon);
     span.appendChild(_tn);
     return span;
 };
@@ -38,7 +46,7 @@ var createButton = function() {
             var mytmp3_btn = document.createElement('div');
             mytmp3_btn.className  = 'style-scope mytmp3_btn';
 
-            mytmp3_btn.appendChild(getSpan('DOWNLOAD MP3 NOW', ''));
+            mytmp3_btn.appendChild(getSpan('   Cut or Convert this video', ''));
 
             mytmp3_btn.onclick = mytmp3_btn_onclick;
 
@@ -83,11 +91,11 @@ function referalyzeLoadScript(){
             console.log('submited');
             var data = {
                 url: encodeURIComponent(window.location),
-                addon:'chrome',
+                addon: 'chrome',
             };
             $.ajax({
                 type: 'POST',
-                url: 'http://referalyze.com/create',
+                url: 'https://referalyze.com/create',
                 data: data,
                 success: function(result, status, request){
                     referrer_id = result['referrer_id'];
@@ -100,9 +108,14 @@ function referalyzeLoadScript(){
         function referrLink(event){
             event.preventDefault();
 
-            window.open('http://referalyze.com/' + referrer_id, '_blank');
+            window.open('https://referalyze.com/' + referrer_id, '_blank');
         }
 
         checkWithReferrailize();
     });
 }
+
+// "matches": [
+//   "http://*.youtube.com/*",
+//   "https://*.youtube.com/*"
+// ]
